@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Agush VPN</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: #4caf50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+            .lang-switch select {
+                padding: 5px;
+                border-radius: 5px;
+                border: none;
+                font-weight: bold;
+            }
+
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        .features, .pricing {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #fff;
+        }
+
+        .feature, .plan {
+            flex: 1 1 250px;
+            margin: 10px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media(max-width:600px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .features, .pricing {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 data-ru="Agush VPN" data-en="Agush VPN">Agush VPN</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#prices" data-ru="Цены" data-en="Prices">Цены</a></li>
+                <li><a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="lang-switch">
+            <select id="langSelect">
+                <option value="ru">🇷🇺 Рус</option>
+                <option value="en">🇬🇧 Eng</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 data-ru="Быстрый и безопасный VPN в Туркменистане" data-en="Fast and Secure VPN in Turkmenistan">Быстрый и безопасный VPN в Туркменистане</h1>
+        <p data-ru="Стабильная работа, высокие скорости, полная конфиденциальность."
+           data-en="Stable connection, high speed, complete privacy.">
+            Стабильная работа, высокие скорости, полная конфиденциальность.
+        </p>
+        <a href="https://t.me/agush06" class="btn" data-ru="Подключиться в Telegram" data-en="Connect via Telegram">Подключиться в Telegram</a>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3 data-ru="⚡ Скорость до 1 Гбит/с" data-en="⚡ Speed up to 1 Gbps">⚡ Скорость до 1 Гбит/с</h3>
+            <p data-ru="Работа без лагов и ограничений." data-en="No lags or limits.">Работа без лагов и ограничений.</p>
+        </div>
+        <div class="feature">
+            <h3 data-ru="🔒 Защита данных" data-en="🔒 Data Protection">🔒 Защита данных</h3>
+            <p data-ru="Полная анонимность и конфиденциальность." data-en="Complete anonymity and privacy.">Полная анонимность и конфиденциальность.</p>
+        </div>
+        <div class="feature">
+            <h3 data-ru="🌍 Без блокировок" data-en="🌍 No geo-blocking">🌍 Без блокировок</h3>
+            <p data-ru="Доступ ко всем сайтам и сервисам." data-en="Access all websites and services.">Доступ ко всем сайтам и сервисам.</p>
+        </div>
+    </section>
+
+    <section class="pricing" id="prices">
+        <h2 data-ru="Тарифы" data-en="Pricing">Тарифы</h2>
+        <div class="plan">
+            <h3 data-ru="1 неделя" data-en="1 Week">1 неделя</h3>
+            <p>70 TMT</p>
+        </div>
+        <div class="plan">
+            <h3 data-ru="1 месяц" data-en="1 Month">1 месяц</h3>
+            <p>150 TMT</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2025 Agush VPN</p>
+        <p data-ru="Связь:" data-en="Contact:">Связь:</p>
+        <a href="https://t.me/agush06" style="color:#ffeb3b;">@agush06</a>
+    </footer>
+
+    <script>
+  const langSelect = document.getElementById('langSelect');
+  langSelect.addEventListener('change', () => {
+    const lang = langSelect.value;
+    document.querySelectorAll('[data-ru]').forEach(el => {
+      el.innerText = el.getAttribute(data-${lang});
+    });
+  });
+    </script>
+
+</body>
+</html>
