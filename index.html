@@ -1,144 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agush Life & VPN Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <title>Моя История — AGUSH</title>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-      scroll-behavior: smooth;
-    }
     body {
       margin: 0;
-      background: radial-gradient(ellipse at center, #000000 0%, #060606 100%);
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
       color: #fff;
     }
     header {
       text-align: center;
-      padding: 2rem 1rem;
-      background: rgba(0,0,0,0.8);
+      padding: 2rem 1rem 1rem;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+    h1 {
+      font-size: 2rem;
+      color: #f44;
+      margin-bottom: 1rem;
     }
-    nav {
-      text-align: center;
-      padding: 1rem;
-      background: #111;
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+    .btns button {
+      border: none;
+      padding: 0.7rem 1.4rem;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
       transition: 0.3s;
     }
-    nav a:hover {
-      background: #444;
+    .btns button:hover {
+      transform: scale(1.05);
+    }
+    .section {
+      display: none;
+      max-width: 600px;
+      margin: auto;
+      background-color: #222;
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      margin-bottom: 2rem;
+      animation: fade 0.4s ease-in-out;
+    }
+    .section.active {
+      display: block;
+    }
+    @keyframes fade {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
     .gallery {
       display: flex;
       flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
       justify-content: center;
-      gap: 1rem;
-      padding: 2rem;
     }
     .gallery img {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
-      transition: transform 0.4s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      font-size: 0.9rem;
-    }
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .contact-buttons a {
-      padding: 0.8rem 1.5rem;
+      width: 45%;
       border-radius: 10px;
-      color: white;
+      object-fit: cover;
+    }
+    .business-link {
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
+    }
+    .business-link a {
       text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      background-color: #ff0055;
+      border-radius: 25px;
+      color: white;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
-    .blue { background: #2196F3; }
-    .green { background: #4CAF50; }
-    .black { background: #000; }
-    .red { background: #E91E63; }
-    .contact-buttons a:hover {
-      opacity: 0.8;
-    }
-    @media (max-width: 600px) {
-      .gallery img {
-        max-width: 100%;
-      }
+    .business-link a:hover {
+      background-color: #ff3366;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Agush Portfolio</h1>
-  <p>История моей жизни и VPN-бизнеса</p>
-</header>
-
-<nav>
-  <a href="#childhood">Детство</a>
-  <a href="#steps">Первые шаги</a>
-  <a href="#now">Сейчас</a>
-  <a href="#shop">Мой магазин</a>
-  <a href="#contact">Связаться</a>
-</nav>
-
-<section id="childhood" class="gallery">
-  <img src="https://i.postimg.cc/BnMPyHwP/school.jpg" alt="Школьные годы">
-  <img src="https://i.postimg.cc/yxKnh5MT/library.jpg" alt="Библиотека Дашогуза">
-  <img src="https://i.postimg.cc/XvRrfJXq/night-car.jpg" alt="Ночная дорога">
-</section>
-
-<section id="steps" class="gallery">
-  <img src="https://i.postimg.cc/tgN0Rtv4/code.png" alt="Программа C++">
-  <img src="https://i.postimg.cc/dtkW1mtt/agush-vpn.jpg" alt="Логотип Agush VPN">
-  <img src="https://i.postimg.cc/yY3WhfND/classroom.jpg" alt="Класс по программированию">
-</section>
-
-<section id="now" class="gallery">
-  <img src="https://i.postimg.cc/2S5znNb9/shop-details.jpg" alt="Презентация VPN сервиса">
-  <img src="https://i.postimg.cc/CMz2Mnh1/night-hope.jpg" alt="Ночной вид на море">
-</section>
-
-<section id="shop" class="contact-buttons">
-  <a href="https://agush.ru" class="red">Перейти в магазин</a>
-</section>
-
-<section id="contact" class="contact-buttons">
-  <a href="https://t.me/+7987235-36-03" class="blue">Telegram</a>
-  <a href="https://wa.me/+7987235-36-03" class="green">WhatsApp</a>
-  <a href="https://linkm.me/users/agabek_06" class="black">Link</a>
-  <a href="https://imo.im/+7987235-36-03" class="blue">IMO</a>
-</section>
-
-<div class="footer">
-  &copy; 2025 Agush APX | Designed with ❤️
-</div>
-
-</body>
+  <header>
+    <h1>Моя история — AGUSH</h1>
+    <div class="btns">
+      <button onclick="showSection('childhood')">👶 Детство</button>
+      <button onclick="showSection('start')">📘 Первые шаги</button>
+      <button onclick="showSection('university')">🎓 Университет</button>
+      <button onclick="showSection('now')">🚀 Сейчас</button>
+    </div>
+  </header>  <div id="childhood" class="section">
+    <h2>👶 Детство</h2>
+    <p>Я родился в 2006 году в городе Дашогуз — это север Туркменистана, известный своей историей, культурой и гостеприимством. С детства меня окружали забота и поддержка. Учёба шла хорошо — я закончил 3-ю школу с отличными оценками. Уже тогда во мне зарождался интерес к технологиям и новым возможностям.</p>
+    <div class="gallery">
+      <!-- Фото 1-4 -->
+    </div>
+  </div>  <div id="start" class="section">
+    <h2>📘 Первые шаги</h2>
+    <p>С юных лет я начал интересоваться компьютерами. Создавал свои первые логотипы, изучал основы дизайна и программирования. Тогда и появились первые проекты, как Platinum Servers и другие. Всё начиналось с энтузиазма и желания учиться.</p>
+    <div class="gallery">
+      <!-- Фото 1-4 -->
+    </div>
+  </div>  <div id="university" class="section">
+    <h2>🎓 Университет</h2>
+    <p>Мой путь продолжился в университете. Здесь я углубил знания в области ИТ, программирования и сетевой безопасности. Я принимал участие в различных проектах и конкурсах. Получил неоценимый опыт и новых друзей.</p>
+    <div class="gallery">
+      <!-- Фото 1-4 -->
+    </div>
+  </div>  <div id="now" class="section">
+    <h2>🚀 Сейчас</h2>
+    <p>Сегодня я создаю и развиваю собственный VPN-бизнес — AGUSH VPN. Услуги работают стабильно, есть техподдержка, всё адаптировано для игр, видео и других онлайн-ресурсов. Я стремлюсь постоянно улучшать качество и расширять возможности.</p>
+    <div class="gallery">
+      <!-- Фото 1-4 -->
+    </div>
+  </div>  <div class="business-link">
+    <a href="https://agush.ru" target="_blank">Перейти в AGUSH Shop</a>
+  </div>  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script></body>
 </html>
