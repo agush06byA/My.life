@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,18 +8,43 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
+      background: url('https://i.postimg.cc/Y0Q1BZ3k/fon.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
+      position: relative;
     }
+
+    /* Тёмная маска поверх фона */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: -1;
+    }
+
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
     }
+
     h1 {
       font-size: 2rem;
       color: #f44;
       margin-bottom: 1rem;
     }
+
+    .intro {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      background-color: rgba(34,34,34,0.85);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
     .btns {
       display: flex;
       flex-wrap: wrap;
@@ -26,6 +52,7 @@
       gap: 1rem;
       margin-bottom: 1rem;
     }
+
     .btns button {
       border: none;
       padding: 0.7rem 1.4rem;
@@ -36,27 +63,32 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     .btns button:hover {
       transform: scale(1.05);
     }
+
     .section {
       display: none;
       max-width: 600px;
       margin: auto;
-      background-color: #222;
+      background-color: rgba(34,34,34,0.9);
       padding: 1.5rem;
       border-radius: 20px;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
       margin-bottom: 2rem;
       animation: fade 0.4s ease-in-out;
     }
+
     .section.active {
       display: block;
     }
+
     @keyframes fade {
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -64,16 +96,19 @@
       margin-top: 1rem;
       justify-content: center;
     }
+
     .gallery img {
       width: 45%;
       border-radius: 10px;
       object-fit: cover;
     }
+
     .business-link {
       display: flex;
       justify-content: center;
       margin: 2rem auto;
     }
+
     .business-link a {
       text-decoration: none;
       padding: 0.7rem 1.5rem;
@@ -83,6 +118,7 @@
       font-weight: bold;
       transition: 0.3s;
     }
+
     .business-link a:hover {
       background-color: #ff3366;
     }
@@ -91,50 +127,74 @@
 <body>
   <header>
     <h1>Моя история — AGUSH</h1>
+
+    <div class="intro">
+      <p>Здравствуйте! Это мой личный сайт, созданный специально для моего университета. Перед тем как перейти в мой магазин, пожалуйста, прочитайте мою историю. Спасибо за понимание!</p>
+    </div>
+
     <div class="btns">
       <button onclick="showSection('childhood')">👶 Детство</button>
       <button onclick="showSection('start')">📘 Первые шаги</button>
       <button onclick="showSection('university')">🎓 Университет</button>
       <button onclick="showSection('now')">🚀 Сейчас</button>
     </div>
-  </header>  <div id="childhood" class="section">
+  </header>
+
+  <div id="childhood" class="section">
     <h2>👶 Детство</h2>
     <p>Я родился в 2006 году в городе Дашогуз — это север Туркменистана, известный своей историей, культурой и гостеприимством. С детства меня окружали забота и поддержка. Учёба шла хорошо — я закончил 3-ю школу с отличными оценками. Уже тогда во мне зарождался интерес к технологиям и новым возможностям.</p>
-    <div class="grid grid-cols-2 gap-4 p-4">
-  <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 1" class="rounded-xl shadow-lg transition-all duration-300">
-  <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 2" class="rounded-xl shadow-lg transition-all duration-300">
-  <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 3" class="rounded-xl shadow-lg transition-all duration-300">
-  <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 4" class="rounded-xl shadow-lg transition-all duration-300">
+    <div class="gallery">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 1">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 2">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 3">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 4">
     </div>
-      
-      <!-- Фото 1-4 -->
-    </div>
-  </div>  <div id="start" class="section">
+  </div>
+
+  <div id="start" class="section">
     <h2>📘 Первые шаги</h2>
     <p>С юных лет я начал интересоваться компьютерами. Создавал свои первые логотипы, изучал основы дизайна и программирования. Тогда и появились первые проекты, как Platinum Servers и другие. Всё начиналось с энтузиазма и желания учиться.</p>
     <div class="gallery">
-      <!-- Фото 1-4 -->
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 1">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 2">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 3">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 4">
     </div>
-  </div>  <div id="university" class="section">
+  </div>
+
+  <div id="university" class="section">
     <h2>🎓 Университет</h2>
     <p>Мой путь продолжился в университете. Здесь я углубил знания в области ИТ, программирования и сетевой безопасности. Я принимал участие в различных проектах и конкурсах. Получил неоценимый опыт и новых друзей.</p>
     <div class="gallery">
-      <!-- Фото 1-4 -->
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 1">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 2">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 3">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 4">
     </div>
-  </div>  <div id="now" class="section">
+  </div>
+
+  <div id="now" class="section">
     <h2>🚀 Сейчас</h2>
     <p>Сегодня я создаю и развиваю собственный VPN-бизнес — AGUSH VPN. Услуги работают стабильно, есть техподдержка, всё адаптировано для игр, видео и других онлайн-ресурсов. Я стремлюсь постоянно улучшать качество и расширять возможности.</p>
     <div class="gallery">
-      <!-- Фото 1-4 -->
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 1">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 2">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 3">
+      <img src="https://i.postimg.cc/m2Xr9Qvy/IMG-20241203-083840-730.jpg" alt="Фото 4">
     </div>
-  </div>  <div class="business-link">
+  </div>
+
+  <div class="business-link">
     <a href="https://agush.ru" target="_blank">Перейти в AGUSH Shop</a>
-  </div>  <script>
+  </div>
+
+  <script>
     function showSection(id) {
       document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(id).classList.add('active');
     }
-  </script></body>
+  </script>
+</body>
 </html>
