@@ -1,178 +1,144 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Agush VPN</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #333;
-        }
-
-        header {
-            background: #4caf50;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-        }
-
-        nav li {
-            margin: 0 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-            .lang-switch select {
-                padding: 5px;
-                border-radius: 5px;
-                border: none;
-                font-weight: bold;
-            }
-
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background: white;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #ff9800;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 15px;
-        }
-
-        .features, .pricing {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 40px 20px;
-            background: #fff;
-        }
-
-        .feature, .plan {
-            flex: 1 1 250px;
-            margin: 10px;
-            padding: 20px;
-            background: #e8f5e9;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        @media(max-width:600px) {
-            nav ul {
-                flex-direction: column;
-            }
-
-            .features, .pricing {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agush Life & VPN Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at center, #000000 0%, #060606 100%);
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0,0,0,0.8);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #444;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .gallery img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      transition: transform 0.4s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      font-size: 0.9rem;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .contact-buttons a {
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .blue { background: #2196F3; }
+    .green { background: #4CAF50; }
+    .black { background: #000; }
+    .red { background: #E91E63; }
+    .contact-buttons a:hover {
+      opacity: 0.8;
+    }
+    @media (max-width: 600px) {
+      .gallery img {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1 data-ru="Agush VPN" data-en="Agush VPN">Agush VPN</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#prices" data-ru="Цены" data-en="Prices">Цены</a></li>
-                <li><a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
-            </ul>
-        </nav>
-        <div class="lang-switch">
-            <select id="langSelect">
-                <option value="ru">🇷🇺 Рус</option>
-                <option value="en">🇬🇧 Eng</option>
-            </select>
-        </div>
-    </header>
+<header>
+  <h1>Agush Portfolio</h1>
+  <p>История моей жизни и VPN-бизнеса</p>
+</header>
 
-    <section class="hero">
-        <h1 data-ru="Быстрый и безопасный VPN в Туркменистане" data-en="Fast and Secure VPN in Turkmenistan">Быстрый и безопасный VPN в Туркменистане</h1>
-        <p data-ru="Стабильная работа, высокие скорости, полная конфиденциальность."
-           data-en="Stable connection, high speed, complete privacy.">
-            Стабильная работа, высокие скорости, полная конфиденциальность.
-        </p>
-        <a href="https://t.me/agush06" class="btn" data-ru="Подключиться в Telegram" data-en="Connect via Telegram">Подключиться в Telegram</a>
-    </section>
+<nav>
+  <a href="#childhood">Детство</a>
+  <a href="#steps">Первые шаги</a>
+  <a href="#now">Сейчас</a>
+  <a href="#shop">Мой магазин</a>
+  <a href="#contact">Связаться</a>
+</nav>
 
-    <section class="features">
-        <div class="feature">
-            <h3 data-ru="⚡ Скорость до 1 Гбит/с" data-en="⚡ Speed up to 1 Gbps">⚡ Скорость до 1 Гбит/с</h3>
-            <p data-ru="Работа без лагов и ограничений." data-en="No lags or limits.">Работа без лагов и ограничений.</p>
-        </div>
-        <div class="feature">
-            <h3 data-ru="🔒 Защита данных" data-en="🔒 Data Protection">🔒 Защита данных</h3>
-            <p data-ru="Полная анонимность и конфиденциальность." data-en="Complete anonymity and privacy.">Полная анонимность и конфиденциальность.</p>
-        </div>
-        <div class="feature">
-            <h3 data-ru="🌍 Без блокировок" data-en="🌍 No geo-blocking">🌍 Без блокировок</h3>
-            <p data-ru="Доступ ко всем сайтам и сервисам." data-en="Access all websites and services.">Доступ ко всем сайтам и сервисам.</p>
-        </div>
-    </section>
+<section id="childhood" class="gallery">
+  <img src="https://i.postimg.cc/BnMPyHwP/school.jpg" alt="Школьные годы">
+  <img src="https://i.postimg.cc/yxKnh5MT/library.jpg" alt="Библиотека Дашогуза">
+  <img src="https://i.postimg.cc/XvRrfJXq/night-car.jpg" alt="Ночная дорога">
+</section>
 
-    <section class="pricing" id="prices">
-        <h2 data-ru="Тарифы" data-en="Pricing">Тарифы</h2>
-        <div class="plan">
-            <h3 data-ru="1 неделя" data-en="1 Week">1 неделя</h3>
-            <p>70 TMT</p>
-        </div>
-        <div class="plan">
-            <h3 data-ru="1 месяц" data-en="1 Month">1 месяц</h3>
-            <p>150 TMT</p>
-        </div>
-    </section>
+<section id="steps" class="gallery">
+  <img src="https://i.postimg.cc/tgN0Rtv4/code.png" alt="Программа C++">
+  <img src="https://i.postimg.cc/dtkW1mtt/agush-vpn.jpg" alt="Логотип Agush VPN">
+  <img src="https://i.postimg.cc/yY3WhfND/classroom.jpg" alt="Класс по программированию">
+</section>
 
-    <footer id="contact">
-        <p>&copy; 2025 Agush VPN</p>
-        <p data-ru="Связь:" data-en="Contact:">Связь:</p>
-        <a href="https://t.me/agush06" style="color:#ffeb3b;">@agush06</a>
-    </footer>
+<section id="now" class="gallery">
+  <img src="https://i.postimg.cc/2S5znNb9/shop-details.jpg" alt="Презентация VPN сервиса">
+  <img src="https://i.postimg.cc/CMz2Mnh1/night-hope.jpg" alt="Ночной вид на море">
+</section>
 
-    <script>
-  const langSelect = document.getElementById('langSelect');
-  langSelect.addEventListener('change', () => {
-    const lang = langSelect.value;
-    document.querySelectorAll('[data-ru]').forEach(el => {
-      el.innerText = el.getAttribute(data-${lang});
-    });
-  });
-    </script>
+<section id="shop" class="contact-buttons">
+  <a href="https://agush.ru" class="red">Перейти в магазин</a>
+</section>
+
+<section id="contact" class="contact-buttons">
+  <a href="https://t.me/+7987235-36-03" class="blue">Telegram</a>
+  <a href="https://wa.me/+7987235-36-03" class="green">WhatsApp</a>
+  <a href="https://linkm.me/users/agabek_06" class="black">Link</a>
+  <a href="https://imo.im/+7987235-36-03" class="blue">IMO</a>
+</section>
+
+<div class="footer">
+  &copy; 2025 Agush APX | Designed with ❤️
+</div>
 
 </body>
 </html>
